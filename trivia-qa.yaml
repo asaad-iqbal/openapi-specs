@@ -40,7 +40,7 @@ paths:
                         type: integer
   /api_count_global.php:
     get:
-      description: Get count against all categories
+      description: Get questions count against all categories
       operationId: getAllQuestionCount
       responses:
         '200':
