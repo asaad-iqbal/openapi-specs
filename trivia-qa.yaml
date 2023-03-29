@@ -1,6 +1,7 @@
 openapi: 3.0.1
 info:
   title: Trivia API OpenAPI specification
+  description: Free to use, user-contributed trivia question database.
   version: '1'
 servers:
   - url: https://opentdb.com
@@ -8,6 +9,7 @@ paths:
   /api_count.php:
     get:
       description: Get questions count against a category
+      operationId: getQuestionCountByCategory
       parameters:
         - name: category
           in: query
@@ -38,7 +40,8 @@ paths:
                         type: integer
   /api_count_global.php:
     get:
-      description: Get count against all categories
+      description: Get questions count against all categories
+      operationId: getAllQuestionCount
       responses:
         '200':
           description: Auto generated using Swagger Inspector
@@ -328,6 +331,7 @@ paths:
   /api.php:
     get:
       description: Get specific questions with different parameters
+      operationId: getQuestions
       parameters:
         - name: difficulty
           in: query
@@ -402,6 +406,7 @@ paths:
   /api_category.php:
     get:
       description: Categories for questions
+      operationId: getCategories
       responses:
         '200':
           description: Categories for questions
